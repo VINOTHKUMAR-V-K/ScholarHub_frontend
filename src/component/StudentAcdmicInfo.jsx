@@ -115,7 +115,11 @@ const StudentAcdmicInfo = () => {
                 className="form-select border-2 border-dark"
               >
                 <option selected>Choose...</option>
-                <option>...</option>
+                <option>BE</option>
+                <option>Bsc</option>
+                <option>ME</option>
+                <option>MSc</option>
+                <option>BCom</option>
               </select>
             </div>
             <div className="col-md-4">
@@ -129,7 +133,11 @@ const StudentAcdmicInfo = () => {
                 className="form-select border-2 border-dark"
               >
                 <option selected>Choose...</option>
-                <option>...</option>
+                <option>civil</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>Mech</option>
+                <option>AI/ML</option>
               </select>
             </div>
             <div className="col-8 col-xs-12 col-lg-8">

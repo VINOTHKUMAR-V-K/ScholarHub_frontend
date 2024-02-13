@@ -53,7 +53,7 @@ const Navigation = () => {
 
   // Define icons with corresponding routes
   const icons = [
-    { icon: faHome, route: '/home' },
+    { icon: faHome, route: '/status' },
     { icon: faCamera, route: '/studentform' },
     { icon: faBell, route: '/studentAcdemic' },
     { icon: faMap, route: '/documentsubmission' },

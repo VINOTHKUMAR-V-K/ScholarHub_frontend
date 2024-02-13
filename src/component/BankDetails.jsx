@@ -42,7 +42,10 @@ const BankDetails = () => {
   .then(res=>setBank(res.data))
   .catch((err)=>console.log(err||"server error"))
  console.log(bank);
+ localStorage.setItem("status","Request sended")
+ alert("You Request has been sended...")
  navigate("/home")
+
 }
   
 

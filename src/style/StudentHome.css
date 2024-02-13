@@ -55,8 +55,9 @@ nav{
   }
   .head{
     font-size: 70px;
-    color:blueviolet;
-
+    color:#F0F0F0;
+    font-family:  Georgia;
+     
   }
   
   .nav-content span a i{

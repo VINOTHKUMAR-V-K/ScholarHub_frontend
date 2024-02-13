@@ -40,7 +40,7 @@ function UserDemo() {
                 navigate('/home')
             }else if(logUser.roll == "Super Admin"){
                 alert("login success")
-                navigate('/home')
+                navigate('/institution')
             }
 				
 			

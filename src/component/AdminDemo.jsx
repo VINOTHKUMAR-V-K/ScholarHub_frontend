@@ -24,7 +24,7 @@ const AdminDemo = () => {
               </div>
 				<h1 className='fw-bold head'>Welcome to our Team</h1>
 
-				<blockquote className='fs-4 fw-bold text-danger py-5 '>Scholarships empower students to pursue their dreams without financial barriers. They represent opportunities, not just for education, but for growth, innovation, and change. Scholarships are more than just financial aid; they're investments in the future, fostering talent and unlocking the potential of bright minds to shape a better tomorrow.</blockquote>
+				<blockquote className='fs-4 fw-bold py-5 ' style={{color:"white",fontFamily:"sans-serif"}}>Scholarships empower students to pursue their dreams without financial barriers. They represent opportunities, not just for education, but for growth, innovation, and change. Scholarships are more than just financial aid; they're investments in the future, fostering talent and unlocking the potential of bright minds to shape a better tomorrow.</blockquote>
 			</div>
 		</div>
 	)

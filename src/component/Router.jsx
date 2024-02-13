@@ -14,13 +14,18 @@ import UserDemo from './UserDemo'
 import { StudentList } from './StudentList'
 import ApprovedStu from './ApprovedStu'
 import { RejectedStu } from './RejectedStu'
-
-
+//ins
+import Instution from '../component/Institute/Instution'
+import OtherStateReq from '../component/Institute/OtherStateReq'
+import ReqStdDetails from '../component/Institute/ReqStdDetails'
+import ScholorshipReq from '../component/Institute/ScholorshipReq'
+import VerficationStatus from '../component/Institute/VerficationStatus'
+import { Empty } from './Institute/Empty'
+import Status from './Status'
 //instution Components
 // import Instution from './Institute/Instution'
 // import ReqStdDetails from './Institute/ReqStdDetails'
 
-//admin 
 
 const Router = () => {
   return (
@@ -42,7 +47,12 @@ const Router = () => {
                     {/* InstutionComponents
                     <Route path="/institution" element={<Instution/>} />
                     <Route path="/RequestStatus" element={<ReqStdDetails/>}/> */}
-
+                    <Route path="/institution" element={<Instution/>} />
+                    <Route path="/RequestStatus" element={<ReqStdDetails/>}/>
+                    <Route path='/OtherStateReq' element={<OtherStateReq/>}/>
+                    <Route path='/scholorshipreq' element={<ScholorshipReq/>}/>
+                    <Route path='/verifystatus' element={<VerficationStatus/>}/>
+                    <Route path='/status' element={<Status/>}/>
                 </Routes>
 
 

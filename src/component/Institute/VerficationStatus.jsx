@@ -1,15 +1,25 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+const VerficationStatus = () => {
+  const time = new Date()
+const [store, setStore] = useState([])
+  const navigate = useNavigate()
 
-const ApprovedStu = () => {
-	const time = new Date()
-	const [store, setStore] = useState([])
-	useEffect(() => {
+  const handleBack =()=>{
+    navigate(`/institution`)
+  }
+  useEffect(() => {
 		var e = localStorage.getItem("approvedRow")
 		setStore(JSON.parse(e))
 		console.log(store);
 	}, [])
-   
-	return (
+
+
+  return (
 		<div>
 			<div className='p-5'>
 				<h1 className='fw-bold'>Approved Students List</h1>
@@ -35,7 +45,7 @@ const ApprovedStu = () => {
         })}
 			</div>
 		</div>
-	)
-}
+  );
+};
 
-export default ApprovedStu
+export default VerficationStatus;
