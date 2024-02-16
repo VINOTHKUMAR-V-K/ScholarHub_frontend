@@ -1,29 +1,34 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Instution = () => {
   // const [reqstddel, setreqstddel] = useState('')
-  const navigate = useNavigate()
- 
+  const navigate = useNavigate();
 
-  const chnageLoc =()=>{
-    navigate(`/RequestStatus`)
-  }
 
-  const changeOtherState =()=>{
-    navigate(`/OtherStateReq`)
-  }
+  const chnageLoc = () => {
+    navigate(`/RequestStatus`);
+  };
 
-  const changeScholorReq =()=>{
-    navigate(`/scholorshipreq`)
-  }
+  const changeOtherState = () => {
+    navigate(`/OtherStateReq`);
+  };
 
-  const changeVerfiStatus=()=>{
-    navigate(`/verifystatus`)
-  }
- 
-  
+  const changeScholorReq = () => {
+    navigate(`/scholorshipreq`);
+  };
+
+  const changeVerfiStatus = () => {
+    navigate(`/verifystatus`);
+  };
+
+
+
+  const handleLogout = () => {
+    navigate('/')
+  };
   return (
     <>
       <div className="container-fluid">
@@ -52,7 +57,7 @@ const Instution = () => {
                       Home
                     </a>
                   </li>
-                  </ul>
+                </ul>
                 <form className="d-flex" role="search">
                   <input
                     className="form-control me-2"
@@ -63,36 +68,53 @@ const Instution = () => {
                   <button className="btn btn-outline-success" type="submit">
                     Search
                   </button>
+                  <button className="btn btn-md btn-light border border-2 border-dark ms-3  logout-button" onClick={handleLogout}>
+                    <FontAwesomeIcon icon={faSignOutAlt} />
+                    Logout
+                  </button>
                 </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-    <div className="institudeHome">
-
-
-     <div className="container">
-     <div className="container">
-        <div className="row gap-2">
-          <div className="bg-dark text-light col-md-3 col-sm-12 col-lg-3 col-xs-12 border border-2 border-info d-flex align-items-center justify-content-center fs-5 fw-bold" style={{height:"25vh"}} onClick={chnageLoc}>
-            Request Student Details
-          </div>
-          <div className="bg-dark text-light col-md-3 col-sm-12 col-lg-3 col-xs-12 border border-2 border-info d-flex align-items-center justify-content-center fs-5 fw-bold" style={{height:"25vh"}} onClick={changeScholorReq}>
-            Scholorship Requests
-          </div>
-          <div className="bg-dark text-light col-md-3 col-sm-12 col-lg-3 col-xs-12 border border-2 border-info d-flex align-items-center justify-content-center fs-5 fw-bold" style={{height:"25vh"}} onClick={changeVerfiStatus}>
-            Verification Status
-          </div>
-          <div className="bg-dark text-light col-md-3 col-sm-12 col-lg-3 col-xs-12 border border-2 border-info d-flex align-items-center justify-content-center fs-5 fw-bold" style={{height:"25vh"}} onClick={changeOtherState}>
-            Other State Student Request
+      <div className="institudeHome">
+        <div className="container">
+          <div className="container">
+            <div className="row gap-2">
+              <div
+                className="bg-dark text-light col-md-3 col-sm-12 col-lg-3 col-xs-12 border border-2 border-info d-flex align-items-center justify-content-center fs-5 fw-bold"
+                style={{ height: "25vh" }}
+                onClick={chnageLoc}
+              >
+                Request Student Details
+              </div>
+              <div
+                className="bg-dark text-light col-md-3 col-sm-12 col-lg-3 col-xs-12 border border-2 border-info d-flex align-items-center justify-content-center fs-5 fw-bold"
+                style={{ height: "25vh" }}
+                onClick={changeScholorReq}
+              >
+                Scholorship Requests
+              </div>
+              <div
+                className="bg-dark text-light col-md-3 col-sm-12 col-lg-3 col-xs-12 border border-2 border-info d-flex align-items-center justify-content-center fs-5 fw-bold"
+                style={{ height: "25vh" }}
+                onClick={changeVerfiStatus}
+              >
+                Verification Status
+              </div>
+              <div
+                className="bg-dark text-light col-md-3 col-sm-12 col-lg-3 col-xs-12 border border-2 border-info d-flex align-items-center justify-content-center fs-5 fw-bold"
+                style={{ height: "25vh" }}
+                onClick={changeOtherState}
+              >
+                Other State Student Request
+              </div>
+            </div>
           </div>
         </div>
       </div>
-     </div>
-    </div>
     </>
-
   );
 };
 
