@@ -1,6 +1,8 @@
 import React from 'react'
 import '../style/user.css';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 const AdminDemo = () => {
     const navigate=useNavigate();
@@ -13,14 +15,20 @@ const AdminDemo = () => {
      const RejectedStu=()=>{
         navigate(`/reject`)
      }
-     
+     const handleLogout = () => {
+      navigate('/')
+    };
 	return (
 		<div>
 			<div className='bgm'>
-              <div className='d-flex justify-content-evenly bg-dark '>
+              <div className='d-flex justify-content-between bg-dark '>
                  <button className='rounded-3 cmc border-0' onClick={()=>allStu()}>All Students</button>
                  <button className='rounded-3 cmc' onClick={()=>approvedStu()}>Approved Students</button>
                  <button className='rounded-3 cmc' onClick={()=>RejectedStu()}>Rejected Students</button>
+                 <button className="btn btn-md btn-light border border-2 border-dark ms-3  logout-button" onClick={handleLogout}>
+                    <FontAwesomeIcon icon={faSignOutAlt} />
+                    Logout
+                  </button>
               </div>
 				<h1 className='fw-bold head'>Welcome to our Team</h1>
 
