@@ -31,7 +31,8 @@ function UserDemo() {
 		}
 		axios.post("http://localhost:5000/loginUser", data).then((res) => {
 			setLogUser(res.data.user)
-			console.log(logUser.roll);
+	        localStorage.setItem('user',logUser.username)
+			console.log(logUser.username);
 			if (logUser.roll == "Admin") {
                 alert("login success")
                  navigate('/adminportal')

@@ -78,7 +78,7 @@ const OtherStateReq = () => {
     <div className="container-fluid mt-4">
       <button className="btn btn-md btn-info" onClick={handleBack}> <FontAwesomeIcon icon={faArrowLeft} /> Back</button>
       <br />
-      <div className="col-md-4">
+      <div className="m-0" style={{margin:'auto'}}>
 								<label htmlFor="inputState" className="form-label fs-5 fw-bold ">
 									State
 								</label>

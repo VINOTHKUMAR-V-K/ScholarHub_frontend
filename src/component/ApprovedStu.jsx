@@ -14,7 +14,7 @@ const ApprovedStu = () => {
 			<div className='p-5'>
 				<h1 className='fw-bold'>Approved Students List</h1>
 				<hr/>
-				{store.map(e=>{
+				{store && store.length>0?store.map(e=>{
           return (
             <div class="card-group">
 					<div class="card">
@@ -32,7 +32,7 @@ const ApprovedStu = () => {
 					</div>
 				</div>
           )
-        })}
+        }):  <h1 style={{color:'red',margin:'auto' ,fontWeight:'bolder'}}>No Result found</h1>}
 			</div>
 		</div>
 	)

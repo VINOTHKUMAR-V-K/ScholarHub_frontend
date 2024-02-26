@@ -15,7 +15,7 @@ export const RejectedStu = () => {
 				<div className='p-5'>
 					<h1 className='fw-bold'>Rejected Students List</h1>
 					<hr/>
-          {del.map(d =>{
+          {del && del.length>0?del.map(d =>{
             return (
               <div class="card-group">
               <div class="card">
@@ -33,7 +33,7 @@ export const RejectedStu = () => {
               </div>
             </div>
             )
-          })}
+          }): <h1 style={{color:'red',margin:'auto' ,fontWeight:'bolder'}}>No Result found</h1> }
 				</div>
 			</div>
 		</div>

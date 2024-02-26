@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
-
+import '../../style/user.css'
 const Instution = () => {
   // const [reqstddel, setreqstddel] = useState('')
   const navigate = useNavigate();
@@ -28,6 +28,7 @@ const Instution = () => {
 
   const handleLogout = () => {
     navigate('/')
+    localStorage.clear()
   };
   return (
     <>
@@ -35,6 +36,9 @@ const Instution = () => {
         <div className="container">
           <div className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
+            <button style={{color:'red'}} className="btn btn-md btn-outline-light border border-2 fs-4 border-dark ms-2 me-4 logout-button" >
+                    {localStorage.getItem('user')}
+                  </button>
               <a className="navbar-brand fw-bold">Institution Panel</a>
               <button
                 className="navbar-toggler"
@@ -78,7 +82,7 @@ const Instution = () => {
           </div>
         </div>
       </div>
-      <div className="institudeHome">
+      <div className="institudeHome bgm pt-4">
         <div className="container">
           <div className="container">
             <div className="row gap-2">
