@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import '../style/user.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import axiosClient from '../axiosClient';
 
 function UserDemo() {
 	const [name, setName] = useState("")
@@ -29,7 +30,7 @@ function UserDemo() {
 			email: mail,
 			password: pass
 		}
-		axios.post("http://localhost:5000/loginUser", data).then((res) => {
+		axiosClient.post("/loginUser", data).then((res) => {
 			setLogUser(res.data.user)
 	        localStorage.setItem('user',logUser.username)
 			console.log(logUser.username);
@@ -55,7 +56,7 @@ function UserDemo() {
 			roll: roll,
 			password: pass
 		}
-		axios.post("http://localhost:5000/postUser", data).then((res) => setPostUser(res.data.users), alert("register success")).catch((err) => err || "register failed")
+		axiosClient.post("/postUser", data).then((res) => setPostUser(res.data.users), alert("register success")).catch((err) => err || "register failed")
 		console.log(postUser);
 	}
 	return (

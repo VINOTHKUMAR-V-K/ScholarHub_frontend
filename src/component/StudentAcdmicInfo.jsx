@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axiosClient from "../axiosClient";
 
 const StudentAcdmicInfo = () => {
         const [insname,setInsname]=useState("")
@@ -48,7 +49,7 @@ const StudentAcdmicInfo = () => {
         hsc_percentage:hsc,
         ug_cgpa:ug
       }
-      axios.post("http://localhost:5000/acdamicDetails",data)
+      axiosClient.post("/acdamicDetails",data)
       .then(res=>setAcadamic(res.data.result))
       .catch(err=>console.log(err||"server error"))
       console.log(acadamic);

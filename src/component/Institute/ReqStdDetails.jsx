@@ -4,6 +4,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faEdit, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import axiosClient from "../../axiosClient";
 
 const ReqStdDetails = () => {
   const navigate = useNavigate()
@@ -11,7 +12,7 @@ const ReqStdDetails = () => {
   const [studata, setStudata] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/getAllStudent")
+    axiosClient.get("/getAllStudent")
       .then((res) => setReq(res.data))
       .catch((err) => console.error(err));
   }, [])

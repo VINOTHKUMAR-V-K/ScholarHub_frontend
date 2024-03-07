@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axiosClient from '../axiosClient'
 
 const BankDetails = () => {
   const [bankname, setBankName] = useState('')
@@ -38,7 +39,7 @@ const BankDetails = () => {
     MICR:micr,
     branchname:branchname
   }
-  axios.post("http://localhost:5000/bankdetails",data)
+  axiosClient.post("/bankdetails",data)
   .then(res=>setBank(res.data))
   .catch((err)=>console.log(err||"server error"))
  console.log(bank);

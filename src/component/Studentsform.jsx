@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import axiosClient from "../axiosClient";
 
 const Studentsform = () => {
 	const [fname, setFname] = useState('')
@@ -93,7 +94,7 @@ const Studentsform = () => {
 			state: states,
 			zip: zip
 		}
-		axios.post("http://localhost:5000/basicdemo", data).then(res => setBasic(res.data)).catch(err => console.log("details error"))
+		axiosClient.post("/basicdemo", data).then(res => setBasic(res.data)).catch(err => console.log("details error"))
 
 		console.log(basic);
     navigate('/studentAcdemic')

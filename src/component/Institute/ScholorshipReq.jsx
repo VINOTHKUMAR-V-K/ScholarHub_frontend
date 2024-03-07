@@ -4,13 +4,14 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faEye, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import axiosClient from "../../axiosClient";
 
 const ScholorshipReq = () => {
   const navigate = useNavigate();
   const [scholor, setScholor] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/getAllAcadamic")
+    axiosClient.get("/getAllAcadamic")
       .then((res) => setScholor(res.data))
       .catch(err => console.error(err));
   }, []);

@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import axiosClient from '../axiosClient';
 
 export const StudentList = () => {
   const time = new Date();
   const [student, setStudent] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/getAllStudent`)
+    axiosClient
+      .get(`/getAllStudent`)
       .then((res) => setStudent(res.data))
       .catch((err) => console.error(err));
   }, []);

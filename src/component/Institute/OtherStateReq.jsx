@@ -4,6 +4,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faEdit, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import axiosClient from "../../axiosClient";
 
 const OtherStateReq = () => {
   const navigate = useNavigate()
@@ -55,7 +56,7 @@ const OtherStateReq = () => {
   const handleChange=(e)=>{
      let search=e.target.value
      console.log(search);
-    axios.get(`http://localhost:5000/getStates/${search}`)
+    axiosClient.get(`/getStates/${search}`)
           .then(res =>setStates(res.data))
           .catch(err  => console.log(err))
           console.log(states);
